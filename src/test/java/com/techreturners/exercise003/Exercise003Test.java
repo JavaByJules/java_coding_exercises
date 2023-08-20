@@ -1,7 +1,6 @@
 package com.techreturners.exercise003;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -40,14 +39,21 @@ public class Exercise003Test {
         assertEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
     }
 
+    // added by Jules - see what happens if a flavour not in the array of flavours is input
     @Test
-    @Disabled
+    public void checkGetIceCreamCodeForStrawberry() {
+        String iceCreamFlavour = "Strawberry";
+        int expected = -1;
+
+        assertEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
+    }
+
+    @Test
     public void checkPickMultipleIceCreamFlavours() {
 
         String[] expected = { "Pistachio", "Raspberry Ripple", "Vanilla", "Mint Chocolate Chip", "Chocolate", "Mango Sorbet" };
 
         assertArrayEquals(expected, ex003.iceCreamFlavours());
     }
-
 
 }
